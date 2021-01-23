@@ -21,6 +21,50 @@ from wordcloud import WordCloud
 from asreview.entry_points import BaseEntryPoint
 from asreview.data import ASReviewData
 
+try:
+    from asreview.data import load_data
+except ImportError:
+
+    # backwards compat
+    try:
+        from pathlib import Path
+        from asreview.utils import is_url
+        from asreview.datasets import DatasetManager
+        from asreview.datasets import DataSetNotFoundError
+
+        def load_data(name, *args, **kwargs):
+            """Load data from file, URL, or plugin.
+
+            Parameters
+            ----------
+            name: str, pathlib.Path
+                File path, URL, or alias of extension dataset.
+
+            Returns
+            -------
+            asreview.ASReviewData:
+                Inititalized ASReview data object.
+            """
+
+            # check is file or URL
+            if Path(name).exists() or is_url(name):
+                return ASReviewData.from_file(name, *args, **kwargs)
+
+            # check if dataset is plugin dataset\
+            try:
+                dataset_path = DatasetManager().find(name).get()
+                return ASReviewData.from_file(dataset_path, *args, **kwargs)
+            except DataSetNotFoundError:
+                pass
+
+            # Could not find dataset, return None.
+            raise FileNotFoundError(
+                f"File, URL, or dataset does not exist: '{name}'")
+
+    except ImportError:
+        # fall back to from_file (without plugin datasets)
+        load_data = ASReviewData.from_file
+
 
 def extend_stopwords(extended_words):
     """Add extra stopwords"""
@@ -73,7 +117,7 @@ class WordCloudEntryPoint(BaseEntryPoint):
         args = parser.parse_args(argv)
 
         # read data in ASReview data object
-        asdata = ASReviewData.from_file(args.path)
+        asdata = load_data(args.path)
 
         # all texts
         if (args.title and args.abstract) or (not args.title and not args.abstract):
