@@ -25,7 +25,7 @@ It should list the 'wordcloud' modus.
 
 ## Basic usage
 
-The dataset ahould contain a column containing titles and/or abstracts. 
+The dataset should contain a column containing titles and/or abstracts. 
 For specific requirements check the [ASReview documentation](https://asreview.readthedocs.io/en/latest/intro/datasets.html).
 To use your data use:
 
