@@ -35,7 +35,7 @@ asreview wordcloud MY_DATA.csv
 
 The following shows the [Schoot et al. (2017) dataset:](https://asreview.readthedocs.io/en/latest/intro/datasets.html#benchmark-datasets)
 
-![figures/ptsd_all.png](figures/ptsd_all.png)
+![All texts](https://github.com/asreview/asreview-wordcloud/blob/main/figures/ptsd_all.png?raw=true)
 
 To make a wordcloud on titles only, use the `title` flag.
 
@@ -43,7 +43,7 @@ To make a wordcloud on titles only, use the `title` flag.
 asreview wordcloud MY_DATA.csv --title
 ```
 
-![figures/ptsd_title.png](figures/ptsd_title.png)
+![Titles only](https://github.com/asreview/asreview-wordcloud/blob/main/figures/ptsd_title.png?raw=true)
 
 To make a wordcloud on abstracts only, use the `abstract` flag.
 
@@ -51,7 +51,7 @@ To make a wordcloud on abstracts only, use the `abstract` flag.
 asreview wordcloud MY_DATA.csv --abstract
 ```
 
-![figures/ptsd_abstract.png](figures/ptsd_abstract.png)
+![Abstracts only](https://github.com/asreview/asreview-wordcloud/blob/main/figures/ptsd_abstract.png?raw=true)
 
 ### Save figure
 
