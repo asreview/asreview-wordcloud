@@ -1,0 +1,2 @@
+include versioneer.py
+include asreviewcontrib/wordcloud/_version.py
