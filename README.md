@@ -25,11 +25,15 @@ It should list the 'wordcloud' modus.
 
 ## Basic usage
 
+The dataset ahould contain a column containing titles and/or abstracts. 
+For specific requirements check our [documentation](https://asreview.readthedocs.io/en/latest/intro/datasets.html).
+To use your data use:
+
 ```
 asreview wordcloud MY_DATA.csv
 ```
 
-The following shows the Schoot et al. (2017) dataset:
+The following shows the [Schoot et al. (2017) dataset:](https://asreview.readthedocs.io/en/latest/intro/datasets.html#benchmark-datasets)
 
 ![figures/ptsd_all.png](figures/ptsd_all.png)
 
