@@ -28,3 +28,35 @@ It should list the 'wordcloud' modus.
 ```
 asreview wordcloud MY_DATA.csv
 ```
+
+The following shows the Schoot et al. (2017) dataset:
+
+![figures/ptsd_all.png](figures/ptsd_all.png)
+
+To make a wordcloud on titles only, use the `title` flag.
+
+```
+asreview wordcloud MY_DATA.csv --title
+```
+
+![figures/ptsd_title.png](figures/ptsd_title.png)
+
+To make a wordcloud on abstracts only, use the `abstract` flag.
+
+```
+asreview wordcloud MY_DATA.csv --abstract
+```
+
+![figures/ptsd_abstract.png](figures/ptsd_abstract.png)
+
+### Save figure
+
+Save the wordcloud to a file with the `-o`  flag.
+
+```
+asreview wordcloud MY_DATA.csv -o MY_DATA_WORDCLOUD.png
+```
+
+## License
+
+This extension is MIT licensed.

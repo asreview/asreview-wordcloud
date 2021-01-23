@@ -32,7 +32,7 @@ setup(
         'Development Status :: 3 - Alpha',
 
         # Pick your license as you wish
-        'License :: OSI Approved :: Apache Software License',
+        'License :: OSI Approved :: MIT License',
 
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
