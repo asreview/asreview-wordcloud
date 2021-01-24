@@ -119,17 +119,30 @@ class WordCloudEntryPoint(BaseEntryPoint):
         # read data in ASReview data object
         asdata = load_data(args.path)
 
+        # Slice relevant or irrelevant items
+        if (args.relevant and args.irrelevant) or \
+                (not args.relevant and not args.irrelevant):
+            subset = [True] * len(asdata)
+
+        # only relevant
+        if args.relevant:
+            subset = asdata.labels == 1
+
+        # only irrelevant
+        if args.irrelevant:
+            subset = asdata.labels == 0
+
         # all texts
         if (args.title and args.abstract) or (not args.title and not args.abstract):
-            word_cloud(asdata.title, output_fp=args.output)
+            word_cloud(asdata.texts[subset], output_fp=args.output)
 
         # only title
         if args.title:
-            word_cloud(asdata.title, output_fp=args.output)
+            word_cloud(asdata.title[subset], output_fp=args.output)
 
         # only abstract
         if args.abstract:
-            word_cloud(asdata.abstract, output_fp=args.output)
+            word_cloud(asdata.abstract[subset], output_fp=args.output)
 
 
 def _parse_arguments(version="Unknown"):
@@ -151,6 +164,14 @@ def _parse_arguments(version="Unknown"):
         "--abstract",
         action="store_true",
         help="Create wordcloud of abstracts only.")
+    parser.add_argument(
+        "--relevant",
+        action="store_true",
+        help="Create wordcloud of relevant records only.")
+    parser.add_argument(
+        "--irrelevant",
+        action="store_true",
+        help="Create wordcloud of relevant records only.")
     parser.add_argument(
         "-o",
         "--output",
