@@ -75,7 +75,11 @@ def extend_stopwords(extended_words):
     return list(stopwords)
 
 
-def word_cloud(words, caption=None, output_fp=None, colormap="viridis", random_state=None):
+def word_cloud(words,
+               caption=None,
+               output_fp=None,
+               colormap="viridis",
+               random_state=None):
     """Word cloud for texts."""
 
     # create word cloud text
