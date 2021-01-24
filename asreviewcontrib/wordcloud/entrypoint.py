@@ -133,8 +133,8 @@ class WordCloudEntryPoint(BaseEntryPoint):
             subset = asdata.labels == 0
 
         # all texts
-        if (args.title and args.abstract) or (not args.title
-                                              and not args.abstract):
+        if (args.title and args.abstract) or \
+                (not args.title and not args.abstract):
             word_cloud(asdata.texts[subset],
                        output_fp=args.output,
                        random_state=args.random_state)
