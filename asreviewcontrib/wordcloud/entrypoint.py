@@ -75,18 +75,17 @@ def extend_stopwords(extended_words):
     return list(stopwords)
 
 
-def word_cloud(words, caption=None, output_fp=None):
+def word_cloud(words, caption=None, output_fp=None, random_state=None):
     """Word cloud for texts."""
 
     # create word cloud text
     text = " ".join(str(word) for word in words)
 
     # generate word cloud images
-    wordcloud = WordCloud(
-        stopwords=STOPWORDS,
-        max_words=100,
-        background_color="white"
-    ).generate(text)
+    wordcloud = WordCloud(stopwords=STOPWORDS,
+                          max_words=100,
+                          background_color="white",
+                          random_state=random_state).generate(text)
 
     # render plot
     plt.figure()
@@ -113,7 +112,8 @@ class WordCloudEntryPoint(BaseEntryPoint):
         self.version = __version__
 
     def execute(self, argv):
-        parser = _parse_arguments(version=f"{self.extension_name}: {self.version}")
+        parser = _parse_arguments(
+            version=f"{self.extension_name}: {self.version}")
         args = parser.parse_args(argv)
 
         # read data in ASReview data object
@@ -133,49 +133,53 @@ class WordCloudEntryPoint(BaseEntryPoint):
             subset = asdata.labels == 0
 
         # all texts
-        if (args.title and args.abstract) or (not args.title and not args.abstract):
-            word_cloud(asdata.texts[subset], output_fp=args.output)
+        if (args.title and args.abstract) or \
+                (not args.title and not args.abstract):
+            word_cloud(asdata.texts[subset],
+                       output_fp=args.output,
+                       random_state=args.random_state)
 
         # only title
         if args.title:
-            word_cloud(asdata.title[subset], output_fp=args.output)
+            word_cloud(asdata.title[subset],
+                       output_fp=args.output,
+                       random_state=args.random_state)
 
         # only abstract
         if args.abstract:
-            word_cloud(asdata.abstract[subset], output_fp=args.output)
+            word_cloud(asdata.abstract[subset],
+                       output_fp=args.output,
+                       random_state=args.random_state)
 
 
 def _parse_arguments(version="Unknown"):
     parser = argparse.ArgumentParser(prog="asreview wordcloud")
-    parser.add_argument("path",
-                        type=str,
-                        help="The file path of the dataset.")
+    parser.add_argument("path", type=str, help="The file path of the dataset.")
     parser.add_argument(
         "-V",
         "--version",
         action="version",
         version=version,
     )
-    parser.add_argument(
-        "--title",
-        action="store_true",
-        help="Create wordcloud of titles only.")
-    parser.add_argument(
-        "--abstract",
-        action="store_true",
-        help="Create wordcloud of abstracts only.")
-    parser.add_argument(
-        "--relevant",
-        action="store_true",
-        help="Create wordcloud of relevant records only.")
-    parser.add_argument(
-        "--irrelevant",
-        action="store_true",
-        help="Create wordcloud of relevant records only.")
-    parser.add_argument(
-        "-o",
-        "--output",
-        default=None,
-        help="Save the wordcloud to a file.")
+    parser.add_argument("--title",
+                        action="store_true",
+                        help="Create wordcloud of titles only.")
+    parser.add_argument("--abstract",
+                        action="store_true",
+                        help="Create wordcloud of abstracts only.")
+    parser.add_argument("--relevant",
+                        action="store_true",
+                        help="Create wordcloud of relevant records only.")
+    parser.add_argument("--irrelevant",
+                        action="store_true",
+                        help="Create wordcloud of relevant records only.")
+    parser.add_argument("--random_state",
+                        type=int,
+                        default=535,
+                        help="Set random state of wordcloud.")
+    parser.add_argument("-o",
+                        "--output",
+                        default=None,
+                        help="Save the wordcloud to a file.")
 
     return parser
