@@ -75,7 +75,7 @@ def extend_stopwords(extended_words):
     return list(stopwords)
 
 
-def word_cloud(words, caption=None, output_fp=None, random_state=None):
+def word_cloud(words, caption=None, output_fp=None, colormap="viridis", random_state=None):
     """Word cloud for texts."""
 
     # create word cloud text
@@ -85,6 +85,7 @@ def word_cloud(words, caption=None, output_fp=None, random_state=None):
     wordcloud = WordCloud(stopwords=STOPWORDS,
                           max_words=100,
                           background_color="white",
+                          colormap=colormap,
                           random_state=random_state).generate(text)
 
     # render plot
@@ -137,18 +138,21 @@ class WordCloudEntryPoint(BaseEntryPoint):
                 (not args.title and not args.abstract):
             word_cloud(asdata.texts[subset],
                        output_fp=args.output,
+                       colormap=args.colormap,
                        random_state=args.random_state)
 
         # only title
         if args.title:
             word_cloud(asdata.title[subset],
                        output_fp=args.output,
+                       colormap=args.colormap,
                        random_state=args.random_state)
 
         # only abstract
         if args.abstract:
             word_cloud(asdata.abstract[subset],
                        output_fp=args.output,
+                       colormap=args.colormap,
                        random_state=args.random_state)
 
 
@@ -177,6 +181,10 @@ def _parse_arguments(version="Unknown"):
                         type=int,
                         default=535,
                         help="Set random state of wordcloud.")
+    parser.add_argument("--colormap",
+                        type=str,
+                        default="viridis",
+                        help="The colormap of the wordcloud.")
     parser.add_argument("-o",
                         "--output",
                         default=None,
