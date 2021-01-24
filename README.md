@@ -25,7 +25,7 @@ It should list the 'wordcloud' modus.
 
 ## Basic usage
 
-The dataset should contain a column containing titles and/or abstracts. 
+The dataset should contain a column containing titles and/or abstracts.
 For specific requirements check the [ASReview documentation](https://asreview.readthedocs.io/en/latest/intro/datasets.html).
 To use your data use:
 
@@ -52,6 +52,12 @@ asreview wordcloud MY_DATA.csv --abstract
 ```
 
 ![Abstracts only](https://github.com/asreview/asreview-wordcloud/blob/main/figures/ptsd_abstract.png?raw=true)
+
+To make a wordcloud on relevant (inclusions) only, use the `relevant` flag.
+
+```
+asreview wordcloud MY_DATA.csv --relevant
+```
 
 ### Save figure
 
