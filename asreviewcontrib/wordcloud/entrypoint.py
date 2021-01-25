@@ -78,8 +78,8 @@ def extend_stopwords(extended_words):
 def word_cloud(words,
                caption=None,
                output_fp=None,
-               colormap="viridis",
-               random_state=None):
+               random_state=None,
+               **wordcloud_kwargs):
     """Word cloud for texts."""
 
     # create word cloud text
@@ -88,9 +88,9 @@ def word_cloud(words,
     # generate word cloud images
     wordcloud = WordCloud(stopwords=STOPWORDS,
                           max_words=100,
+                          random_state=random_state,
                           background_color="white",
-                          colormap=colormap,
-                          random_state=random_state).generate(text)
+                          **wordcloud_kwargs).generate(text)
 
     # render plot
     plt.figure()
@@ -124,6 +124,13 @@ class WordCloudEntryPoint(BaseEntryPoint):
         # read data in ASReview data object
         asdata = load_data(args.path)
 
+        # wordcloud styling
+        styling = {
+            "colormap": args.colormap,
+            "width": args.width,
+            "height": args.height
+        }
+
         # Slice relevant or irrelevant items
         if (args.relevant and args.irrelevant) or \
                 (not args.relevant and not args.irrelevant):
@@ -142,22 +149,22 @@ class WordCloudEntryPoint(BaseEntryPoint):
                 (not args.title and not args.abstract):
             word_cloud(asdata.texts[subset],
                        output_fp=args.output,
-                       colormap=args.colormap,
-                       random_state=args.random_state)
+                       random_state=args.random_state,
+                       **styling)
 
         # only title
         if args.title:
             word_cloud(asdata.title[subset],
                        output_fp=args.output,
-                       colormap=args.colormap,
-                       random_state=args.random_state)
+                       random_state=args.random_state,
+                       **styling)
 
         # only abstract
         if args.abstract:
             word_cloud(asdata.abstract[subset],
                        output_fp=args.output,
-                       colormap=args.colormap,
-                       random_state=args.random_state)
+                       random_state=args.random_state,
+                       **styling)
 
 
 def _parse_arguments(version="Unknown"):
@@ -189,6 +196,14 @@ def _parse_arguments(version="Unknown"):
                         type=str,
                         default="viridis",
                         help="The colormap of the wordcloud.")
+    parser.add_argument("--width",
+                        type=int,
+                        default=400,
+                        help="The width of the wordcloud.")
+    parser.add_argument("--height",
+                        type=int,
+                        default=200,
+                        help="The height of the wordcloud.")
     parser.add_argument("-o",
                         "--output",
                         default=None,
