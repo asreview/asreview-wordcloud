@@ -18,8 +18,8 @@ import matplotlib.pyplot as plt
 from wordcloud import STOPWORDS
 from wordcloud import WordCloud
 
-from asreview.entry_points import BaseEntryPoint
 from asreview.data import ASReviewData
+from asreview.entry_points import BaseEntryPoint
 
 try:
     from asreview.data import load_data
@@ -66,6 +66,9 @@ except ImportError:
         load_data = ASReviewData.from_file
 
 
+DPI = 100
+
+
 def extend_stopwords(extended_words):
     """Add extra stopwords"""
     # create stopword list
@@ -79,6 +82,8 @@ def word_cloud(words,
                caption=None,
                output_fp=None,
                random_state=None,
+               width=400,
+               height=200,
                **wordcloud_kwargs):
     """Word cloud for texts."""
 
@@ -90,10 +95,12 @@ def word_cloud(words,
                           max_words=100,
                           random_state=random_state,
                           background_color="white",
+                          width=width,
+                          height=height,
                           **wordcloud_kwargs).generate(text)
 
     # render plot
-    plt.figure()
+    plt.figure(figsize=(width / DPI, height / DPI))
     plt.imshow(wordcloud, interpolation="bilinear")
     if caption:
         plt.set_title(caption)
@@ -101,7 +108,8 @@ def word_cloud(words,
 
     # save or show
     if output_fp:
-        plt.savefig(output_fp, bbox_inches="tight")
+        plt.tight_layout(pad=1)
+        plt.savefig(output_fp, dpi=100)
     else:
         plt.show()
 
