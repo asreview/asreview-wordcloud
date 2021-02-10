@@ -1,5 +1,7 @@
 {
-	"description": "Generating wordclouds to create a visual impression of the contents of a systematic review dataset",
+	"description": "When using Automated Systematic Review (ASReview) to screen titles and abstracts in a systematic review,
+	wordclouds can visualize the words that are used the most within the titles and/or abstracts. The package also allows to create wordclouds for the relevant inclusions only.",
+	"title": "Wordclouds: A tool to create a visual impression of the verbal content within a systematic review dataset"
 	"creators": [{
 			"name": "Van de Schoot, Rens",
 			"affiliation": "Department of Psychology, Utrecht University",
@@ -30,6 +32,12 @@
 		"text data",
 		"natural language processing",
 		"visualization"
+	],
+	"related_identifiers": [
+		{
+			"relation": "isSupplementTo",
+		 	"identifier": "http://arxiv.org/abs/2006.12166"
+		}
 	],
 	"license": "MIT",
 	"upload_type": "software"
