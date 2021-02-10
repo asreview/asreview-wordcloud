@@ -1,0 +1,36 @@
+{
+	"description": "Generating wordclouds to create a visual impression of the contents of a systematic review dataset",
+	"creators": [{
+			"name": "Van de Schoot, Rens",
+			"affiliation": "Department of Psychology, Utrecht University",
+			"orcid": "0000-0001-7736-2091"
+		},
+		{
+			"name": "De Bruin, Jonathan",
+			"affiliation": "Utrecht University",
+			"orcid": "0000-0002-4297-0502"
+		},
+		{
+			"name": "Ma, Yongchao",
+			"affiliation": "Utrecht University",
+			"orcid": "0000-0003-4100-5468"
+		},
+    {
+      "name": "Van den Brand, Sofie",
+			"affiliation": "Utrecht University",
+			"orcid": "0000-0002-2408-3336"
+    }
+	],
+	"keywords": [
+		"wordcloud",
+		"systematic review",
+		"active learning",
+		"statistics",
+		"machine learning",
+		"text data",
+		"natural language processing",
+		"visualization"
+	],
+	"license": "MIT",
+	"upload_type": "software"
+}
