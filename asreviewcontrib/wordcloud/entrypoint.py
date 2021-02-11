@@ -195,7 +195,7 @@ def _parse_arguments(version="Unknown"):
                         help="Create wordcloud of relevant records only.")
     parser.add_argument("--irrelevant",
                         action="store_true",
-                        help="Create wordcloud of relevant records only.")
+                        help="Create wordcloud of irrelevant records only.")
     parser.add_argument("--random_state",
                         type=int,
                         default=535,
