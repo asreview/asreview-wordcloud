@@ -1,6 +1,7 @@
 # ASReview-wordcloud
 
-![Deploy and release](https://github.com/asreview/asreview-wordcloud/workflows/Deploy%20and%20release/badge.svg)![Build status](https://github.com/asreview/asreview-wordcloud/workflows/test-suite/badge.svg)
+![Deploy and release](https://github.com/asreview/asreview-wordcloud/workflows/Deploy%20and%20release/badge.svg) ![Build status](https://github.com/asreview/asreview-wordcloud/workflows/test-suite/badge.svg) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4672242.svg)](https://doi.org/10.5281/zenodo.4672242)
+
 
 This is a wordcloud supplemental package for the
 [ASReview](https://github.com/asreview/asreview) software. It is an easy way
