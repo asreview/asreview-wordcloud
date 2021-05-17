@@ -3,9 +3,9 @@
    "title":"Wordclouds: A tool to create a visual impression of the verbal content within a systematic review dataset",
    "creators":[
       {
-         "name":"Van de Schoot, Rens",
-         "affiliation":"Department of Psychology, Utrecht University",
-         "orcid":"0000-0001-7736-2091"
+         "name":"Ma, Yongchao",
+         "affiliation":"Utrecht University",
+         "orcid":"0000-0003-4100-5468"
       },
       {
          "name":"De Bruin, Jonathan",
@@ -13,9 +13,9 @@
          "orcid":"0000-0002-4297-0502"
       },
       {
-         "name":"Ma, Yongchao",
-         "affiliation":"Utrecht University",
-         "orcid":"0000-0003-4100-5468"
+         "name":"Van de Schoot, Rens",
+         "affiliation":"Department of Psychology, Utrecht University",
+         "orcid":"0000-0001-7736-2091"
       },
       {
          "name":"Van den Brand, Sofie",
