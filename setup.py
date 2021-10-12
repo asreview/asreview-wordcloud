@@ -41,7 +41,7 @@ setup(
     keywords='asreview wordcloud',
     packages=find_namespace_packages(include=['asreviewcontrib.*']),
     install_requires=[
-        "wordcloud", "asreview", "matplotlib", "asreview-visualization"
+        "wordcloud", "asreview", "matplotlib"
     ],
 
     extras_require={
