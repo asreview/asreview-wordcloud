@@ -40,8 +40,8 @@ def get_config():
     cfg.VCS = "git"
     cfg.style = "pep440"
     cfg.tag_prefix = "v"
-    cfg.parentdir_prefix = "asreview-visualization-"
-    cfg.versionfile_source = "asreviewcontrib/visualization/_version.py"
+    cfg.parentdir_prefix = "asreview-wordcloud-"
+    cfg.versionfile_source = "asreviewcontrib/wordcloud/_version.py"
     cfg.verbose = False
     return cfg
 
