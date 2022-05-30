@@ -3,9 +3,9 @@
 [![PyPI version](https://badge.fury.io/py/asreview-wordcloud.svg)](https://badge.fury.io/py/asreview-wordcloud) [![Downloads](https://pepy.tech/badge/asreview-wordcloud)](https://pepy.tech/project/asreview-wordcloud) ![Deploy and release](https://github.com/asreview/asreview-wordcloud/workflows/Deploy%20and%20release/badge.svg) ![Build status](https://github.com/asreview/asreview-wordcloud/workflows/test-suite/badge.svg) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4672242.svg)](https://doi.org/10.5281/zenodo.4672242)
 
 
-This is a wordcloud supplemental package for the
-[ASReview](https://github.com/asreview/asreview) software. It is an easy way
-to create a visual impression of the contents of datasets.
+ASReview-wordcloud is an extension for the [ASReview
+LAB](https://github.com/asreview/asreview) software. It offers an easy way to
+create a visual impression of the contents of datasets.
 
 ## Installation
 
@@ -22,7 +22,7 @@ detect it. Test this by:
 asreview --help
 ```
 
-It should list the 'wordcloud' modus.
+It should list the `wordcloud` subcommand.
 
 ## Basic usage
 
@@ -70,4 +70,11 @@ asreview wordcloud MY_DATA.csv -o MY_DATA_WORDCLOUD.png
 
 ## License
 
-This extension is MIT licensed.
+This extension is published under the [MIT license](/LICENSE).
+
+## Contact
+
+This extension is part of the ASReview project ([asreview.ai](https://asreview.ai)). It is maintained by the
+maintainers of ASReview LAB. See [ASReview
+LAB](https://github.com/asreview/asreview) for contact information and more
+resources.
