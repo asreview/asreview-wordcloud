@@ -30,18 +30,18 @@ setup(
         #   4 - Beta
         #   5 - Production/Stable
         'Development Status :: 3 - Alpha',
-
-        # Pick your license as you wish
         'License :: OSI Approved :: MIT License',
-
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
     ],
     keywords='asreview wordcloud',
     packages=find_namespace_packages(include=['asreviewcontrib.*']),
+    python_requires='>=3.7',
     install_requires=[
-        "wordcloud", "asreview", "matplotlib"
+        "wordcloud",
+        "asreview",
+        "matplotlib"
     ],
 
     extras_require={
