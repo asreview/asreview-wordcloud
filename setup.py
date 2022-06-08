@@ -25,11 +25,7 @@ setup(
     author='Utrecht University',
     author_email='asreview@uu.nl',
     classifiers=[
-        # How mature is this project? Common values are
-        #   3 - Alpha
-        #   4 - Beta
-        #   5 - Production/Stable
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
@@ -40,7 +36,7 @@ setup(
     python_requires='>=3.7',
     install_requires=[
         "wordcloud",
-        "asreview",
+        "asreview>=1,<2",
         "matplotlib"
     ],
 
