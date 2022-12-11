@@ -1,6 +1,6 @@
 # ASReview-wordcloud
 
-[![PyPI version](https://badge.fury.io/py/asreview-wordcloud.svg)](https://badge.fury.io/py/asreview-wordcloud) [![Downloads](https://pepy.tech/badge/asreview-wordcloud)](https://pepy.tech/project/asreview-wordcloud) ![Deploy and release](https://github.com/asreview/asreview-wordcloud/workflows/Deploy%20and%20release/badge.svg) ![Build status](https://github.com/asreview/asreview-wordcloud/workflows/test-suite/badge.svg) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4672241.svg)](https://doi.org/10.5281/zenodo.4672241)
+[![PyPI version](https://badge.fury.io/py/asreview-wordcloud.svg)](https://badge.fury.io/py/asreview-wordcloud) [![Downloads](https://pepy.tech/badge/asreview-wordcloud)](https://pepy.tech/project/asreview-wordcloud) ![Deploy and release](https://github.com/asreview/asreview-wordcloud/workflows/Deploy%20and%20release/badge.svg) ![Build status](https://github.com/asreview/asreview-wordcloud/workflows/test-suite/badge.svg) [![DOI](https://zenodo.org/badge/332095019.svg)](https://zenodo.org/badge/latestdoi/332095019)
 
 
 ASReview-wordcloud is an extension for the [ASReview
