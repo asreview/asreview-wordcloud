@@ -1,4 +1,6 @@
-# ASReview-wordcloud
+# ❗❗❗ Deprecated: ASReview-wordcloud
+
+## ASReview-wordcloud is deprecated and has not been updated to ASReview version 2. To get insights into datasets and subsets of labels, you can use ASReview LAB's new dashboard. 
 
 [![PyPI version](https://badge.fury.io/py/asreview-wordcloud.svg)](https://badge.fury.io/py/asreview-wordcloud) [![Downloads](https://pepy.tech/badge/asreview-wordcloud)](https://pepy.tech/project/asreview-wordcloud) ![Deploy and release](https://github.com/asreview/asreview-wordcloud/workflows/Deploy%20and%20release/badge.svg) ![Build status](https://github.com/asreview/asreview-wordcloud/workflows/test-suite/badge.svg) [![DOI](https://zenodo.org/badge/332095019.svg)](https://zenodo.org/badge/latestdoi/332095019)
 
